@@ -74,6 +74,39 @@ class BasePIUnitTest(TestCase):
             raise ManyInputArgsError('Использованы не все значения input')
         __builtins__['input'] = self.__input
 
+    def test_print_input(self, test_func: Callable,
+                         inputs: SupportsIndex,
+                         prints: SupportsIndex,
+                         all_: bool = False
+                         ) -> None:
+        """
+        Тестирует код с функцией print и input.
+
+        Подставляет по порядку данные из prints и inputs.
+
+        Args:
+            test_func: Callable (вызываемый объект)
+            inputs: SupportsIndex (значения для print)
+            prints: SupportsIndex (значения для print)
+            all_: bool (При True, вернёт ошибку если остались неиспользованные
+            значения)
+        """
+        self.__prints = prints
+        self.__inputs = inputs
+
+        __builtins__['print'] = self.__fake_print
+        __builtins__['input'] = self.__fake_input
+
+        test_func()
+
+        if all_ and self.__inputs:
+            raise ManyInputArgsError('Использованы не все значения input')
+        if all_ and self.__prints:
+            raise ManyPrintArgsError('Использованы не все значения print')
+
+        __builtins__['print'] = self.__print
+        __builtins__['input'] = self.__input
+
     def __fake_input(self, *args, **kwargs):
         if not self.__inputs:
             raise ZeroInputArgsError('Нет значений для подстановки в input')
