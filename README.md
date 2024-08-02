@@ -51,8 +51,7 @@
 
 
 ![](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white)
-![](https://img.shields.io/badge/parser-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
+![](https://img.shields.io/badge/unittest-%23000.svg?style=for-the-badge&logoColor=white)
 <br><br>
 
 ## Прежде всего:
