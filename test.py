@@ -42,9 +42,9 @@ class BasePIUnitTest(TestCase):
         Проверяет, напечаталось ли в print то, что ожидалось.
 
         Args:
-            test_func: Callable (вызываемый объект)
+            test_func: Callable (тестируемый объект)
             prints: SupportsIndex (значения для print)
-            all_: bool (При True, вернёт ошибку если остались неиспользованные
+            all_: bool (при True, вернёт ошибку если остались неиспользованные
              значения)
         """
         self.__prints = prints
@@ -62,9 +62,9 @@ class BasePIUnitTest(TestCase):
         Возвращает указанные данные при вызове input.
 
         Args:
-            test_func: Callable (вызываемый объект)
-            inputs: SupportsIndex (значения для print)
-            all_: bool (При True, вернёт ошибку если остались неиспользованные
+            test_func: Callable (тестируемый объект)
+            inputs: SupportsIndex (значения для input)
+            all_: bool (при True, вернёт ошибку если остались неиспользованные
             значения)
         """
         self.__inputs = inputs
@@ -85,10 +85,10 @@ class BasePIUnitTest(TestCase):
         Подставляет по порядку данные из prints и inputs.
 
         Args:
-            test_func: Callable (вызываемый объект)
-            inputs: SupportsIndex (значения для print)
+            test_func: Callable (тестируемый объект)
+            inputs: SupportsIndex (значения для input)
             prints: SupportsIndex (значения для print)
-            all_: bool (При True, вернёт ошибку если остались неиспользованные
+            all_: bool (при True, вернёт ошибку если остались неиспользованные
             значения)
         """
         self.__prints = prints
