@@ -54,17 +54,11 @@
 ![](https://img.shields.io/badge/unittest-%23000.svg?style=for-the-badge&logoColor=white)
 <br><br>
 
-## Прежде всего:
-
-> Установите Python (если он не установлен)<br>
-> [Скачать Python3](https://www.python.org/downloads/)
-
 <br>
 
-Клонируйте репозиторий и перейдите в установленную директорию:
+Скачайте библиотеку:
 ```
-git clone https://github.com/Ryize/PIUnit.git
-cd PIUnit
+pip install piunit
 ```
 
 <br>
@@ -72,7 +66,7 @@ cd PIUnit
 Пример использования:
 ```
 from main import print_hello_world, log_user_state, get_data
-from test import BasePIUnitTest
+from piunit.test import BasePIUnitTest
 
 
 class TestOne(BasePIUnitTest):
