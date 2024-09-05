@@ -2,6 +2,35 @@
 
 Добавляет возможность тестировать код с функциями print и input
 
+## Использованные технологии: 
+
+
+![](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![](https://img.shields.io/badge/unittest-%23000.svg?style=for-the-badge&logoColor=white)
+<br><br>
+
+<br>
+
+Скачайте библиотеку:
+```
+pip install piunit
+```
+
+<br>
+
+Пример использования:
+```
+from main import print_hello_world, log_user_state, get_data
+from piunit.test import BasePIUnitTest
+
+
+class TestOne(BasePIUnitTest):
+    def test_one(self):
+        self.test_print(print_hello_world, ['Hello, World!'])
+        self.test_input(log_user_state, ['Смена пароля', 'Пароль успешно изменён'], True)
+        self.test_print_input(get_data, [10, 3, 2], ['Результат выполнения кода: 15'])
+```
+
 <pre>
 Описание методов класса BasePIUnitTest:
 + test_print(test_func: Callable, prints: SupportsIndex,
@@ -46,34 +75,5 @@
     all_: bool (при True, вернёт ошибку если остались неиспользованные
     значения)
 </pre>
-
-## Использованные технологии: 
-
-
-![](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![](https://img.shields.io/badge/unittest-%23000.svg?style=for-the-badge&logoColor=white)
-<br><br>
-
-<br>
-
-Скачайте библиотеку:
-```
-pip install piunit
-```
-
-<br>
-
-Пример использования:
-```
-from main import print_hello_world, log_user_state, get_data
-from piunit.test import BasePIUnitTest
-
-
-class TestOne(BasePIUnitTest):
-    def test_one(self):
-        self.test_print(print_hello_world, ['Hello, World!'])
-        self.test_input(log_user_state, ['Смена пароля', 'Пароль успешно изменён'], True)
-        self.test_print_input(get_data, [10, 3, 2], ['Результат выполнения кода: 15'])
-```
 
 > Технологии, использованные в проекте: Python 3, unittest
