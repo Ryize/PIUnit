@@ -9,9 +9,7 @@
 ![](https://img.shields.io/badge/unittest-%23000.svg?style=for-the-badge&logoColor=white)
 <br><br>
 
-<br>
-
-Скачайте библиотеку:
+Установите библиотеку:
 ```
 pip install piunit
 ```
